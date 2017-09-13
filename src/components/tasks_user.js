@@ -8,7 +8,6 @@ import Moment from 'react-moment';
 import SideBar from './sidebar';
 import NewUserModal from './new_user';
 import NewTaskModal from './new_task';
-import EditUserModal from './edit_user';
 
 class UserTasks extends Component {
   constructor(props) {
@@ -100,7 +99,6 @@ class UserTasks extends Component {
           {user.name}
           <span className="settings-buttons">
           </span>
-          <EditUserModal renderField={this.renderField} onSubmit={this.onEditUserSubmit} />
         </li>
       );
     })
@@ -150,7 +148,7 @@ class UserTasks extends Component {
           <span className="settings-buttons">          
             <a href="#" onClick={this.onDeleteTaskClick.bind(this, task, task.user_id)} className="delete-button"><i className="fa fa-lg fa-times-circle" aria-hidden="true"></i></a>
           </span>
-          <a href="#" className="complete-button-on" onClick={this.toggleComplete.bind(this, task, task.user_id)} ><i className="fa fa-lg fa-check-circle" aria-hidden="true"></i></a>          
+          <a href="#" className="complete-button-on" onClick={this.toggleNotComplete.bind(this, task, task.user_id)} ><i className="fa fa-lg fa-check-circle" aria-hidden="true"></i></a>          
         </li>
       );
       
