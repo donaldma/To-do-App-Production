@@ -99,8 +99,6 @@ class UserTasks extends Component {
         <li onClick={this.selectedUser.bind(this, user.id)} key={index} className="list-group-item">
           {user.name}
           <span className="settings-buttons">
-            {/* <a href="#" className="delete-button" onClick={this.onDeleteUserClick.bind(this, user.id)} ><i className="fa fa-lg fa-times-circle" aria-hidden="true"></i></a> */}
-            {/* <a href="#" data-toggle="modal" data-target="#edit-users-modal" className="edit-button"><i className="fa fa-lg fa-pencil" aria-hidden="true"></i></a> */}
           </span>
           <EditUserModal renderField={this.renderField} onSubmit={this.onEditUserSubmit} />
         </li>
@@ -140,7 +138,6 @@ class UserTasks extends Component {
             {task.name}
             <span className="settings-buttons">
               <a href="#" onClick={this.onDeleteTaskClick.bind(this, task, task.user_id)} className="delete-button"><i className="fa fa-lg fa-times-circle" aria-hidden="true"></i></a>
-              {/* <a href="#" className="edit-button"><i className="fa fa-lg fa-pencil" aria-hidden="true"></i></a> */}
             </span>
             <a href="#" className="complete-button" onClick={this.toggleComplete.bind(this, task, task.user_id)} ><i className="fa fa-lg fa-circle-thin" aria-hidden="true"></i></a>
           </li>
@@ -152,7 +149,6 @@ class UserTasks extends Component {
           <s>{task.name}</s>
           <span className="settings-buttons">          
             <a href="#" onClick={this.onDeleteTaskClick.bind(this, task, task.user_id)} className="delete-button"><i className="fa fa-lg fa-times-circle" aria-hidden="true"></i></a>
-            {/* <a href="#" className="edit-button"><i className="fa fa-lg fa-pencil" aria-hidden="true"></i></a> */}
           </span>
           <a href="#" className="complete-button-on" onClick={this.toggleComplete.bind(this, task, task.user_id)} ><i className="fa fa-lg fa-check-circle" aria-hidden="true"></i></a>          
         </li>
@@ -190,17 +186,6 @@ class UserTasks extends Component {
   }
 
   render() {
-
-    /* ==== LOADING STATE ==== */  
-
-    if(_.size(this.props.users) === 0) {    
-      return (
-        <div className="loading">
-          Loading..
-        </div>
-      );
-    }
-
     /* ==== IF NO USER IS SELECTED DO NOT SHOW ADD NEW TASK BUTTON ==== */  
     
     if(_.size(this.props.usersTasks) === 0) { 
