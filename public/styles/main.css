@@ -122,7 +122,7 @@ a:focus {
   margin-top: 55px;
   color: white;
   font-family: Segoe,Segoe UI,Arial,"sans-serif";
-  background: url(./imgs/background2.jpg) no-repeat bottom; }
+  background: url(../imgs/background2.jpg) no-repeat bottom; }
 
 .label {
   font-weight: 400; }
@@ -161,7 +161,7 @@ a:focus {
   font-weight: 600; }
 
 .error-background {
-  background-image: url("./imgs/error.jpg");
+  background-image: url("../imgs/error.jpg");
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -182,16 +182,24 @@ a:focus {
 
 .no-users-found {
   color: #d9534f;
-  text-align: center }
+  text-align: center; }
 
 .panel-default > .panel-heading {
   text-align: center; }
 
+.panel-heading {
+  padding: 13px 15px 0px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px; }
+
+.panel {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px; }
+
 .list-group-item {
   text-align: left;
   overflow: hidden;
-  text-overflow: ellipsis;
-  cursor: pointer; }
+  text-overflow: ellipsis; }
   .list-group-item:hover {
     background-color: #f6f8fa; }
     .list-group-item:hover .settings-buttons {
