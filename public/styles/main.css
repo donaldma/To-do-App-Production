@@ -252,6 +252,13 @@ a:focus {
 .welcome {
   text-align: center; }
 
+@media only screen and (min-width: 767px) {
+  .mobile-tasks {
+    display: none !important; } }
+
+.mobile-tasks {
+  text-align: center; }
+
 .main-button {
   color: #777;
   background: #fff;
@@ -279,6 +286,34 @@ a:focus {
 @media only screen and (max-width: 767px) {
   .main-button {
     font-size: 10px; } }
+
+.main-button-tasks {
+  color: #777;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: block;
+  letter-spacing: 2px;
+  padding: 8px 0;
+  text-transform: uppercase;
+  margin: 10px auto;
+  text-align: center;
+  position: relative;
+  top: 5px;
+  transition: all 0.25s ease-out;
+  width: 100%; }
+
+.main-button-tasks:hover {
+  border-color: #eee;
+  color: #262830; }
+
+.main-button-tasks:disabled {
+  cursor: not-allowed;
+  opacity: 0.65; }
+
+@media only screen and (max-width: 767px) {
+  .main-button-tasks {
+    display: none; } }
 
 .link-button {
   margin-left: 50px; }
