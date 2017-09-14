@@ -40,7 +40,7 @@ class UserTasks extends Component {
     });
   }
 
-  /* ==== SUBMIT HANDLER FOR EDIT USER ==== */  
+  /* ==== SUBMIT HANDLER FOR EDIT USER (NOT USED ATM) ==== */  
 
   onEditUserSubmit = (values, id) => {
     this.props.editUser(values, this.state.selectedUser, () => {
@@ -80,27 +80,12 @@ class UserTasks extends Component {
     })
   }
 
-  /* ==== DELETE USER FUNCTION ==== */
+  /* ==== DELETE USER FUNCTION (NOT USED ATM) ==== */
 
   onDeleteUserClick = (id) => {
     this.props.deleteUser(id, () => {
       this.props.fetchUsers();
       this.props.selectUserTasks(null)    
-    })
-  }
-
-
-  /* ==== RENDER USER SIDEBAR ==== */
-
-  renderUsers = () => {
-    return _.map(this.props.users, (user, index) => {
-      return (
-        <li onClick={this.selectedUser.bind(this, user.id)} key={index} className="list-group-item">
-          {user.name}
-          <span className="settings-buttons">
-          </span>
-        </li>
-      );
     })
   }
 
@@ -201,7 +186,7 @@ class UserTasks extends Component {
           <div className="row">
             <div className="col-md-12">
               <div className="side">
-                <SideBar renderUsers={this.renderUsers} />
+                <SideBar selectedUser={this.selectedUser} />
                 <div className="add-button">
                   <button className="main-button" data-toggle="modal" data-target="#users-modal"><i className="fa fa-plus" aria-hidden="true"></i> Add User</button>
                 </div>
@@ -235,7 +220,7 @@ class UserTasks extends Component {
         <div className="row">
           <div className="col-md-12">
             <div className="side">
-              <SideBar renderUsers={this.renderUsers} />            
+              <SideBar selectedUser={this.selectedUser} />           
               <div className="add-button">
                 <button className="main-button" data-toggle="modal" data-target="#users-modal"><i className="fa fa-plus" aria-hidden="true"></i> Add User</button>
               </div>

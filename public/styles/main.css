@@ -175,6 +175,10 @@ a:focus {
   .side {
     text-align: center; } }
 
+.no-users-found {
+  color: #d9534f;
+  text-align: center }
+
 .panel-default > .panel-heading {
   text-align: center; }
 

@@ -32,6 +32,12 @@ module.exports = (dbHelper) => {
     });
   });
 
+  router.get('/users/search/:name', (req, res) => {
+    dbHelper.searchUser(req.params.name).then((results) => {
+      res.json(results);
+    })
+  });
+
   router.post('/users/edit/:id', (req, res) => {
     dbHelper.updateUser(req.body, req.params.id).then((results) => {
       res.json(results);

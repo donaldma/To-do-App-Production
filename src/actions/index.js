@@ -9,7 +9,7 @@ export const TOGGLE_TRUE = 'toggle_true';
 export const TOGGLE_FALSE = 'toggle_false';
 export const CREATE_TASK = 'create_task';
 export const DELETE_TASK = 'delete_task';
-export const EDIT_USER = 'edit_user';
+export const SEARCH_USER = 'search_user';
 
 export function fetchAllTasks() {
   const request = axios.get('/api/all');
@@ -98,12 +98,11 @@ export function deleteTask(task, id, callback) {
   }
 }
 
-export function editUser(values, id, callback) {
-  const request = axios.post(`/api/users/edit/${id}`, values)
-    .then(() => callback());
-
+export function searchUser(name, callback) {
+  const request = axios.get(`/api/users/search/${name}`)
+  
   return {
-    type: EDIT_USER,
+    type: SEARCH_USER,
     payload: request
   }
 }
