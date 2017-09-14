@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import _ from 'lodash';
 import * as actions from '../actions';
-import SideNav from 'react-simple-sidenav';
 
 class NavBar extends Component {
   renderUsers = () => {
