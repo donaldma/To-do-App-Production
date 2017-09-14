@@ -25,6 +25,10 @@ class UserTasks extends Component {
   /* ==== SUBMIT HANDLER FOR NEW USERS ==== */  
   
   onSubmit = (values) => {
+    if(_.findKey(this.props.users, { name: values.name })) {
+      alert('Users must be unique (Case sensitive)');
+      return false;
+    }
     this.props.createUser(values, () => {
       this.props.fetchUsers();
       $('#users-modal').modal('hide');
