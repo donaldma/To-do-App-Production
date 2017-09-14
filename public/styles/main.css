@@ -303,8 +303,9 @@ a:focus {
   color: #767678;
   opacity: 1; }
 
-.settings-buttons {
-  display: none; }
+@media only screen and (min-width: 767px) {
+  .settings-buttons {
+    display: none; } }
 
 .complete-button {
   float: left;
