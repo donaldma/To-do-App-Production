@@ -161,7 +161,7 @@ a:focus {
   font-weight: 600; }
 
 .error-background {
-  background-image: url("../imgs/error.jpg");
+  background-image: url("./imgs/error.jpg");
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -199,6 +199,7 @@ a:focus {
 .list-group-item {
   text-align: left;
   overflow: hidden;
+  cursor: pointer;
   text-overflow: ellipsis; }
   .list-group-item:hover {
     background-color: #f6f8fa; }
