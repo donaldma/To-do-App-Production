@@ -19,6 +19,9 @@ class SideBar extends Component {
       return (
         <li onClick={this.props.selectedUser.bind(this, user.id)} key={index} className="list-group-item">
           {user.name}
+          <span className="settings-buttons">
+            <a href="#" className="delete-button" onClick={this.props.onDeleteUserClick.bind(this, user.id)} ><i className="fa fa-lg fa-times-circle" aria-hidden="true"></i></a>
+          </span>
         </li>
       );
     })

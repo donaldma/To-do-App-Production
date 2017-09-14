@@ -15,12 +15,12 @@ exports.down = function (knex, Promise) {
       table.integer('user_id')
         .references('id')
         .inTable('users');
-      table.timestamps(true, true);        
+      table.timestamps(true, true);
     }),
     knex.schema.table('tasks', function (table) {
       table.integer('list_id')
-      .references('id')
-      .inTable('lists');
+        .references('id')
+        .inTable('lists');
     }),
   ]);
 };

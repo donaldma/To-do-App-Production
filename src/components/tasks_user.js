@@ -80,12 +80,13 @@ class UserTasks extends Component {
     })
   }
 
-  /* ==== DELETE USER FUNCTION (NOT USED ATM) ==== */
+  /* ==== DELETE USER FUNCTION ==== */
 
   onDeleteUserClick = (id) => {
     this.props.deleteUser(id, () => {
-      this.props.fetchUsers();
-      this.props.selectUserTasks(null)    
+      this.props.fetchUsers();          
+      this.props.clearState();
+      this.setState({ selectedUser: false })
     })
   }
 
@@ -117,23 +118,23 @@ class UserTasks extends Component {
       if(!task.completed) {
         /* ==== IF USER HAS TASKS THAT ARE NOT COMPLETED ==== */
         return (
-          <li onClick={this.toggleComplete.bind(this, task, task.user_id)} key={index} className="list-group-item">
+          <li onClick={this.toggleComplete.bind(this, task, task.users_id)} key={index} className="list-group-item">
             {task.name}
             <span className="settings-buttons">
-              <a href="#" onClick={this.onDeleteTaskClick.bind(this, task, task.user_id)} className="delete-button"><i className="fa fa-lg fa-times-circle" aria-hidden="true"></i></a>
+              <a href="#" onClick={this.onDeleteTaskClick.bind(this, task, task.users_id)} className="delete-button"><i className="fa fa-lg fa-times-circle" aria-hidden="true"></i></a>
             </span>
-            <a href="#" className="complete-button" onClick={this.toggleComplete.bind(this, task, task.user_id)} ><i className="fa fa-lg fa-circle-thin" aria-hidden="true"></i></a>
+            <a href="#" className="complete-button" onClick={this.toggleComplete.bind(this, task, task.users_id)} ><i className="fa fa-lg fa-circle-thin" aria-hidden="true"></i></a>
           </li>
         );
       }
       /* ==== IF USER HAS TASKS THAT ARE COMPLETED ==== */
       return (
-        <li onClick={this.toggleNotComplete.bind(this, task, task.user_id)} key={index} className="list-group-item">
+        <li onClick={this.toggleNotComplete.bind(this, task, task.users_id)} key={index} className="list-group-item">
           <s>{task.name}</s>
           <span className="settings-buttons">          
-            <a href="#" onClick={this.onDeleteTaskClick.bind(this, task, task.user_id)} className="delete-button"><i className="fa fa-lg fa-times-circle" aria-hidden="true"></i></a>
+            <a href="#" onClick={this.onDeleteTaskClick.bind(this, task, task.users_id)} className="delete-button"><i className="fa fa-lg fa-times-circle" aria-hidden="true"></i></a>
           </span>
-          <a href="#" className="complete-button-on" onClick={this.toggleNotComplete.bind(this, task, task.user_id)} ><i className="fa fa-lg fa-check-circle" aria-hidden="true"></i></a>          
+          <a href="#" className="complete-button-on" onClick={this.toggleNotComplete.bind(this, task, task.users_id)} ><i className="fa fa-lg fa-check-circle" aria-hidden="true"></i></a>          
         </li>
       );
       
@@ -186,7 +187,7 @@ class UserTasks extends Component {
           <div className="row">
             <div className="col-md-12">
               <div className="side">
-                <SideBar selectedUser={this.selectedUser} />
+                <SideBar selectedUser={this.selectedUser} onDeleteUserClick={this.onDeleteUserClick} />
                 <div className="add-button">
                   <button className="main-button" data-toggle="modal" data-target="#users-modal"><i className="fa fa-plus" aria-hidden="true"></i> Add User</button>
                 </div>
@@ -220,7 +221,7 @@ class UserTasks extends Component {
         <div className="row">
           <div className="col-md-12">
             <div className="side">
-              <SideBar selectedUser={this.selectedUser} />           
+              <SideBar selectedUser={this.selectedUser} onDeleteUserClick={this.onDeleteUserClick} />           
               <div className="add-button">
                 <button className="main-button" data-toggle="modal" data-target="#users-modal"><i className="fa fa-plus" aria-hidden="true"></i> Add User</button>
               </div>
