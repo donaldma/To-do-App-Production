@@ -5,7 +5,6 @@ import { createStore, applyMiddleware } from 'redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import ReduxPromise from 'redux-promise';
 import ReduxThunk from 'redux-thunk';
-import NavBar from './components/nav';
 
 import reducers from './reducers';
 import AllTasks from './components/tasks_all';
@@ -17,7 +16,6 @@ ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>  
     <BrowserRouter>
       <div>
-        <NavBar />
         <Switch>
           <Route path="/tasks" component={AllTasks} />
           <Route path="/" component={UserTasks} />

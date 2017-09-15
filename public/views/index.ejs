@@ -17,6 +17,9 @@
   <div class="animationload">
     <div class="loader">&nbsp;</div>
   </div>
+  <div class="container">
+    <div id="react-root"></div>
+  </div>
   <script>
     $(window).ready(function() {
       setTimeout(function() {
@@ -24,9 +27,11 @@
       }, 2000);
     });
   </script>
-  <div class="container">
-    <div id="react-root"></div>
-  </div>
+  <script >
+    $(document).on('click',function(){
+      $('.collapse').collapse('hide');
+    })
+    </script>
   <script src="../bundle.js"></script>
 </body>
 
