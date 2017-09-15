@@ -8,7 +8,7 @@ import Moment from 'react-moment';
 import SideBar from './sidebar';
 import NewUserModal from './new_user';
 import NewTaskModal from './new_task';
-import NavBar from './components/nav';
+import NavBar from './nav';
 
 class UserTasks extends Component {
   constructor(props) {

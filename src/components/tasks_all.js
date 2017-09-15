@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import * as actions from '../actions';
 import _ from 'lodash';
 import Moment from 'react-moment';
-import NavBar from './components/nav';
+import NavBar from './nav';
 
 class AllTasks extends Component {
   componentDidMount() {
