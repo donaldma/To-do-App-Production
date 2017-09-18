@@ -12,6 +12,10 @@ const dbHelper = require("./lib/dbHelper")(knex);
 const knexLogger = require('knex-logger');
 const apiRoutes = require("./routes/api");
 
+setInterval(function() {
+    http.get("http://donaldma-todoapp.herokuapp.com");
+}, 300000);
+
 app.use(cors());
 
 app.use(knexLogger(knex));
